@@ -1,0 +1,135 @@
+title: Tecart Cookie Manager
+form:
+  validation: loose
+
+  fields:
+
+    cookie-manager:
+      type: section
+      title: PLUGIN_TECART_COOKIE_MANAGER.BANNER_SECTION_CONTENT
+      underline: true
+
+      fields:
+        banner_title:
+          type: text
+          size: large
+          label: PLUGIN_TECART_COOKIE_MANAGER.BANNER_TITLE
+          help: PLUGIN_TECART_COOKIE_MANAGER.BANNER_TITLE_HELP
+          default:  Cookies fetzen!
+        banner_cat_title:
+          type: text
+          size: large
+          default: Ihr persönlicher Cookie Banner Manager
+          label: PLUGIN_TECART_COOKIE_MANAGER.BANNER_CAT_TITLE
+          help: PLUGIN_TECART_COOKIE_MANAGER.BANNER_CAT_TITLE_HELP
+        banner_text:
+          type: textarea
+          markdown: false
+          rows: 5
+          label: PLUGIN_TECART_COOKIE_MANAGER.BANNER_TEXT
+          default: Diese Website speichert Daten wie Cookies, um die erforderlichen Funktionen der Website zu aktivieren, einschließlich Analyse, Targeting und Personalisierung. Sie können Ihre Einstellungen jederzeit ändern oder die Standardeinstellungen übernehmen.
+          validate:
+            type: textarea
+
+    button_accept:
+      type: section
+      title: PLUGIN_TECART_COOKIE_MANAGER.BANNER_SECTION_BUTTON_ACCEPT
+      underline: true
+
+      fields:
+        button_accept_text:
+          type: text
+          size: large
+          default: Na klar. Akzeptieren & starten
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_TEXT
+        button_accept_layout:
+          type: toggle
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT
+          default: layout-2
+          highlight: layout-2
+          options:
+            layout-1: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT_1
+            layout-2: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT_2
+
+    button_settings:
+      type: section
+      title: PLUGIN_TECART_COOKIE_MANAGER.BANNER_SECTION_BUTTON_SETTINGS
+      underline: true
+
+      fields:
+        button_settings_active:
+          type: toggle
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_ACTIVE
+          default: activated
+          highlight: activated
+          options:
+              activated: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_ACTIVATED
+              deactivated: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_DEACTIVATED
+        button_settings_text:
+          type: text
+          size: large
+          default: Einstellungen
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_TEXT
+        button_settings_layout:
+          type: toggle
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT
+          default: layout-1
+          highlight: layout-1
+          options:
+            layout-1: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT_1
+            layout-2: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT_2
+        button_settings_empty:
+          type: text
+          size: large
+          default: Es sind keine Einstellungen verfügbar.
+          label: PLUGIN_TECART_COOKIE_MANAGER.SETTINGS_EMPTY
+
+    button_deny:
+      type: section
+      title: PLUGIN_TECART_COOKIE_MANAGER.BANNER_SECTION_BUTTON_DENY
+      underline: true
+
+      fields:
+        button_deny_active:
+          type: toggle
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_ACTIVE
+          default: activated
+          highlight: activated
+          options:
+              activated: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_ACTIVATED
+              deactivated: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_DEACTIVATED
+        button_deny_text:
+          type: text
+          size: large
+          default: Nur notwendige
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_TEXT
+        button_deny_layout:
+          type: toggle
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT
+          default: layout-1
+          highlight: layout-1
+          options:
+            layout-1: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT_1
+            layout-2: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT_2
+
+    banner_revokable:
+      type: section
+      title: PLUGIN_TECART_COOKIE_MANAGER.BANNER_SECTION_REVOKABLE
+      underline: true
+
+      fields:
+        banner_revokable_text:
+          type: text
+          size: large
+          default: Reset Cookie Settings
+          label: PLUGIN_TECART_COOKIE_MANAGER.BANNER_REVOKABLE_TEXT
+        button_revokable_color:
+          type: text
+          size: small
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_REVOKABLE_COLOR
+          default: '#7faf34'
+        button_revokable_text_color:
+          type: text
+          size: small
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_REVOKABLE_TEXT_COLOR
+          default: '#ffffff'

@@ -1,0 +1,68 @@
+PLUGIN_TECART_COOKIE_MANAGER:
+  COOKIE_MANAGER: "Cookie Manager"
+  COOKIE_MANAGER_SUB: "by TecArt GmbH"
+  CATEGORIES: Categories
+  BANNER: Banner
+  SCRIPTS: Scripts
+  BANNER_SECTION_CONTENT: Banner content
+  BANNER_TEXT: Banner text
+  BANNER_TEXT_DEFAULT: They help us to better understand the use of our websites so that we can offer you tailor-made content
+  BANNER_TITLE: Banner title
+  BANNER_TITLE_HELP: title of main cookie banner
+  BANNER_TITLE_DEFAULT: Cookies are good for you
+  BANNER_CAT_TITLE: Categories banner title
+  BANNER_CAT_TITLE_HELP: title of banner width category options
+  BANNER_CAT_TITLE_DEFAULT: Your personal cookie banner manager
+  BANNER_SECTION_BUTTON_ACCEPT: Button accept
+  BUTTON_ACCEPT_TEXT_DEFAULT: Accept
+  BANNER_SECTION_BUTTON_SETTINGS: Button settings
+  BUTTON_SETTINGS_TEXT_DEFAULT: Settings
+  SETTINGS_EMPTY: Text, if no categories or scripts are available.
+  BANNER_SECTION_BUTTON_DENY: Button Deny
+  BANNER_SECTION_REVOKABLE: Banner Revokable.
+  BANNER_REVOKABLE_TEXT: Revokable text
+  BUTTON_REVOKABLE_COLOR: Button background color
+  BUTTON_REVOKABLE_TEXT_COLOR: Button text color
+  BUTTON_LAYOUT: Button Layout
+  BUTTON_LAYOUT_2: standard
+  BUTTON_LAYOUT_1: transparent
+  BUTTON_TEXT: Button text
+  BUTTON_ICON: Button fontawesome icon
+  BUTTON_ICON_LINK: usable icons - <a href="https://fontawesome.com/icons?d=gallery&s=solid&m=free" target="_blank" alt="FontAwesome Galary">FontAwesome</a>
+  BUTTON_SAVE: Button save
+  BUTTON_ACTIVE: Button active
+  BUTTON_ACTIVATED: active
+  BUTTON_DEACTIVATED: not active
+  CATEGORY_TITLE: Category title
+  CATEGORY_TEXT:  Category text
+  CATEGORY_ADD: add category
+  CATEGORY_COOKIES: opt-in for all cookies
+  CATEGORY_COOKIES_ACTIVATED: show
+  CATEGORY_COOKIES_DEACTIVATED: hide
+  CATEGORY_COOKIES_HELP: Help
+  CATEGORY_COOKIES_HELPTEXT: If show the category toggle button is visible and all scripts of categorie are initial included. If hide no toggle button is visible.
+  CATEGORY_SAVE_SETTINGS_BTN: Save Settings
+  SCRIPT_ADD: new script
+  SCRIPT_TITLE: scripts title
+  SCRIPT_TEXT: script Text
+  SCRIPT_CATEGORY: Category
+  SCRIPT_COOKIES_STANDARD: Default (script included or not)
+  SCRIPT_COOKIES: opt-in (show checkbox on banner)
+  SCRIPT_COOKIES_STANDARD_ACTIVATED: active
+  SCRIPT_COOKIES_STANDARD_DEACTIVATED: not active
+  SCRIPT_LOAD_ON_SCROLL_PERCENT: load on % scroll
+  SCRIPT_CODE: Code  (script tags were automatically generated)
+  SCRIPT_CODE_ADD: new Code
+  SCRIPT_CODE_POSITION: Position
+  SCRIPT_CODE_BODY_TOP: HTML body start
+  SCRIPT_CODE_BODY_BOTTOM: HTML body end
+  SCRIPT_CODE_HEAD: HTML head
+  SCRIPT_CODE_TAG: HTML tag element
+  SCRIPT_CODE_TAG_SCRIPT: script
+  SCRIPT_CODE_TAG_NOSCRIPT: noscript
+  YES: yes
+  NO: no
+  TITLE_VALIDATE_MESSAGE: Please enter a title!
+  CODE_VALIDATE_MESSAGE: Please enter script code!
+  TEXT_VALIDATE_MESSAGE: Please enter a description!
+  SCRIPT_CATEGORY_VALIDATE_MESSAGE: Please set a category!

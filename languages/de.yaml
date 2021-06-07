@@ -1,0 +1,68 @@
+PLUGIN_TECART_COOKIE_MANAGER:
+  COOKIE_MANAGER: "Cookie Manager"
+  COOKIE_MANAGER_SUB: "by TecArt GmbH"
+  CATEGORIES: Kategorien
+  BANNER: Banner
+  SCRIPTS: Scripts
+  BANNER_SECTION_CONTENT: Banner Inhalte
+  BANNER_TEXT: Banner Text
+  BANNER_TEXT_DEFAULT: Sie helfen uns, die Nutzung unserer Websites besser zu verstehen, damit wir Ihnen maßgeschneiderte Inhalten anbieten können.
+  BANNER_TITLE: Banner Titel
+  BANNER_TITLE_HELP: Titel des Cookie Banners
+  BANNER_TITLE_DEFAULT: Cookies fetzen!
+  BANNER_CAT_TITLE: Kategorie Banner Titel
+  BANNER_CAT_TITLE_HELP: Titel des Banners mit der Kategorieübersicht
+  BANNER_CAT_TITLE_DEFAULT: Ihr persönlicher Cookie Banner Manager
+  BANNER_SECTION_BUTTON_ACCEPT: Button akzeptieren
+  BUTTON_ACCEPT_TEXT_DEFAULT: Einstellung treffen.
+  BANNER_SECTION_BUTTON_SETTINGS: Button Einstellungen
+  SETTINGS_EMPTY: Text, wenn keine Kategorien / Skripte vorhanden sind.
+  BUTTON_SETTINGS_TEXT_DEFAULT: Na klar. Akzeptieren & starten.
+  BANNER_SECTION_BUTTON_DENY: Button Deny
+  BANNER_SECTION_REVOKABLE: Banner Revokable.
+  BANNER_REVOKABLE_TEXT: Revokable Text
+  BUTTON_REVOKABLE_COLOR: Button Hintergrund Farbe
+  BUTTON_REVOKABLE_TEXT_COLOR: Button Text Farbe
+  BUTTON_LAYOUT: Button Layout
+  BUTTON_LAYOUT_2: Standard
+  BUTTON_LAYOUT_1: Transparent
+  BUTTON_TEXT: Button Text
+  BUTTON_ICON: Button Fontawesome Icon
+  BUTTON_ICON_LINK: Verwendbare Icons - <a href="https://fontawesome.com/icons?d=gallery&s=solid&m=free" target="_blank" alt="FontAwesome Galary">FontAwesome</a>
+  BUTTON_SAVE: Button Speichern
+  BUTTON_ACTIVE: Button aktiv
+  BUTTON_ACTIVATED: aktiv
+  BUTTON_DEACTIVATED: nicht aktiv
+  CATEGORY_TITLE: Kategorie Titel
+  CATEGORY_TEXT: Kategorie Text
+  CATEGORY_ADD: Kategorie hinzufügen
+  CATEGORY_COOKIES: Opt-In für alle Cookies
+  CATEGORY_COOKIES_ACTIVATED: sichtbar
+  CATEGORY_COOKIES_DEACTIVATED: nicht sichtbar
+  CATEGORY_COOKIES_HELP: Erklärung
+  CATEGORY_COOKIES_HELPTEXT: Wenn sichtbar, dann wird der Kategorie Toggler ausgegeben, auf "on" gestellt und alle Scripts/Cookies dieser Kategorie initial aktiviert. Wenn nicht sichtbar, wird kein Toggler angezeigt.
+  CATEGORY_SAVE_SETTINGS_BTN: Einstellungen speichern
+  SCRIPT_ADD: Neues Script
+  SCRIPT_TITLE: Script Titel
+  SCRIPT_TEXT: Script Text
+  SCRIPT_CATEGORY: Kategorie
+  SCRIPT_COOKIES: Opt-in (Ausgabe Checkbox Website)
+  SCRIPT_COOKIES_STANDARD: Standard (Script eingebunden oder nicht)
+  SCRIPT_COOKIES_STANDARD_ACTIVATED: aktiv
+  SCRIPT_COOKIES_STANDARD_DEACTIVATED: nicht aktiv
+  SCRIPT_LOAD_ON_SCROLL_PERCENT: Laden nach % Scroll
+  SCRIPT_CODE: Code (script Tags werden automatisch generiert)
+  SCRIPT_CODE_ADD: Neuer Code
+  SCRIPT_CODE_POSITION: Position
+  SCRIPT_CODE_BODY_TOP: HTML Body Anfang
+  SCRIPT_CODE_BODY_BOTTOM: HTML Body Ende
+  SCRIPT_CODE_HEAD: HTML Head
+  SCRIPT_CODE_TAG: HTML Element
+  SCRIPT_CODE_TAG_SCRIPT: script
+  SCRIPT_CODE_TAG_NOSCRIPT: noscript
+  YES: Ja
+  NO: Nein
+  TITLE_VALIDATE_MESSAGE: Bitte geben Sie den Titel an!
+  CODE_VALIDATE_MESSAGE: Bitte tragen Sie den Script Code ein!
+  TEXT_VALIDATE_MESSAGE: Bitte geben Sie eine Beschreibung ein!
+  SCRIPT_CATEGORY_VALIDATE_MESSAGE: Bitte wählen Sie ein Kategorie aus!

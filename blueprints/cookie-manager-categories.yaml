@@ -1,0 +1,63 @@
+title: Tecart Cookie Manager Categories
+form:
+  validation:  loose
+
+  fields:
+
+    categories:
+      name: PLUGIN_TECART_COOKIE_MANAGER.CATEGORIES
+      type: list
+      style: vertical
+      collapsed: true
+      btnLabel: PLUGIN_TECART_COOKIE_MANAGER.CATEGORY_ADD
+
+      fields:
+        .category_title:
+          type: text
+          size: large
+          label: PLUGIN_TECART_COOKIE_MANAGER.CATEGORY_TITLE
+          validate:
+            required: true
+            message: PLUGIN_TECART_COOKIE_MANAGER.TITLE_VALIDATE_MESSAGE
+        .category_cookies:
+          type: toggle
+          label: PLUGIN_TECART_COOKIE_MANAGER.CATEGORY_COOKIES
+          default: deactivated
+          highlight: deactivated
+          options:
+            activated: PLUGIN_TECART_COOKIE_MANAGER.CATEGORY_COOKIES_ACTIVATED
+            deactivated: PLUGIN_TECART_COOKIE_MANAGER.CATEGORY_COOKIES_DEACTIVATED
+        .category_cookies_helptext:
+          type: display
+          size: large
+          label: PLUGIN_TECART_COOKIE_MANAGER.CATEGORY_COOKIES_HELP
+          content: PLUGIN_TECART_COOKIE_MANAGER.CATEGORY_COOKIES_HELPTEXT
+        .category_text:
+          type: textarea
+          markdown: false
+          rows: 5
+          label: PLUGIN_TECART_COOKIE_MANAGER.CATEGORY_TEXT
+          validate:
+            type: textarea
+            required: true
+            message: PLUGIN_TECART_COOKIE_MANAGER.TEXT_VALIDATE_MESSAGE
+
+    categories_save:
+      type: section
+      title: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_SAVE
+      underline: true
+
+      fields:
+        categories_save_text:
+          type: text
+          size: large
+          default: Einstellungen speichern
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_TEXT
+        categories_save_layout:
+          type: toggle
+          label: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT
+          default: layout-1
+          highlight: layout-1
+          options:
+            layout-1: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT_1
+            layout-2: PLUGIN_TECART_COOKIE_MANAGER.BUTTON_LAYOUT_2

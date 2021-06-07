@@ -1,0 +1,39 @@
+{% extends 'partials/base.html.twig' %}
+
+{% if admin.route %}
+    {% set context = admin.page(true) %}
+{% endif %}
+
+{% block titlebar %}
+    <div class="button-bar">
+        <a class="button" href="{{ base_url }}"><i class="fa fa-reply"></i> {{ "PLUGIN_ADMIN.BACK"|tu }}</a>
+        <button class="button" type="submit" name="task" value="save" form="blueprints"><i class="fa fa-check"></i> {{ "PLUGIN_ADMIN.SAVE"|tu }}</button>
+    </div>
+    <h1><i class="fa fa-fw fa-shield"></i> {{ "PLUGIN_TECART_COOKIE_MANGER.COOKIE_MANAGER"|tu }}
+        <sub><a href="www.tecart.de" target="_blank"> {{ "PLUGIN_TECART_COOKIE_MANGER.COOKIE_MANAGER_SUB"|tu }}</a></sub>
+    </h1>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="form-tabs">
+        <div class="tabs-nav">
+            <a {% if uri.basename|e == 'cookie-manager' %}class="active"{% endif %} href="{{ base_url_relative }}/cookie-manager">
+                <span>{{ "PLUGIN_TECART_COOKIE_MANGER.BANNER"|tu }}</span>
+            </a>
+
+            <a {% if uri.basename|e == 'cookie-manager-categories' %}class="active"{% endif %} href="{{ base_url_relative }}/cookie-manager-categories">
+                <span>{{ "PLUGIN_TECART_COOKIE_MANGER.CATEGORIES"|tu }}</span>
+            </a>
+
+            <a {% if uri.basename|e == 'cookie-manager-scripts' %}class="active"{% endif %} href="{{ base_url_relative }}/cookie-manager-scripts">
+                <span>{{ "PLUGIN_TECART_COOKIE_MANGER.SCRIPTS"|tu }}</span>
+            </a>
+        </div>
+    </div>
+
+    {% include 'partials/blueprints.html.twig' with { data: cookieManagerData, blueprints: cookieManagerData.blueprints } %}
+
+
+{% endblock %}

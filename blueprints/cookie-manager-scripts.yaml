@@ -1,0 +1,85 @@
+title: Tecart Cookie Manager Scripts
+form:
+  validation: loose
+
+  fields:
+
+    scripts:
+      name: PLUGIN_TECART_COOKIE_MANAGER.SCRIPTS
+      type: list
+      style: vertical
+      collapsed: true
+      btnLabel: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_ADD
+
+      fields:
+        .script_title:
+          type: text
+          size: large
+          label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_TITLE
+          validate:
+            required: true
+            message: PLUGIN_TECART_COOKIE_MANAGER.TITLE_VALIDATE_MESSAGE
+        .script_text:
+          type: textarea
+          markdown: false
+          rows: 5
+          label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_TEXT
+          validate:
+            type: textarea
+        .script_category:
+          type: select
+          classes: fancy
+          label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CATEGORY
+          data-options@: 'Grav\Plugin\TecartCookieManager\Classes\CookieManager\CookieManager::getCategoriesForBlueprintOptions'
+          validate:
+            required: true
+            message: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CATEGORY_VALIDATE_MESSAGE
+        .script_cookies:
+          type: toggle
+          label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_COOKIES
+          default: 1
+          options:
+            1: PLUGIN_TECART_COOKIE_MANAGER.YES
+            0: PLUGIN_TECART_COOKIE_MANAGER.NO
+        .script_cookies_standard:
+          type: toggle
+          label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_COOKIES_STANDARD
+          default: activated
+          highlight: deactivated
+          options:
+            activated: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_COOKIES_STANDARD_ACTIVATED
+            deactivated: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_COOKIES_STANDARD_DEACTIVATED
+
+        .script_codes:
+          name: PLUGIN_TECART_COOKIE_MANAGER.SCRIPTS
+          type: list
+          style: vertical
+          collapsed: true
+          label:  PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE
+          btnLabel: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_ADD
+
+          fields:
+            .code_title:
+              type: textarea
+              label:  PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE
+              validate:
+                  type: textarea
+                  required: true
+                  message: PLUGIN_TECART_COOKIE_MANAGER.CODE_VALIDATE_MESSAGE
+            .code_position:
+              type: toggle
+              label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_POSITION
+              default: body-bottom
+              highlight: body-bottom
+              options:
+                head: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_HEAD
+                body-top: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_BODY_TOP
+                body-bottom: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_BODY_BOTTOM
+            .code_tag:
+              type: toggle
+              label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_TAG
+              default: script
+              highlight: script
+              options:
+                script: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_TAG_SCRIPT
+                noscript: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_TAG_NOSCRIPT
