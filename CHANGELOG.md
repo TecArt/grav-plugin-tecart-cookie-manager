@@ -1,3 +1,8 @@
+# v0.1.1
+##  06/2021
+[](#improved)
+* Correct README.md
+
 # v0.1.0
 ##  12/2020
 
