@@ -122,11 +122,11 @@ Colors and texts can therefore also be built into the theme dynamically.
 
 ```twig
 array [
-    "enabled" =&gt; true
-    "data_storage" =&gt; "pages"
-    "custom_settings_link_text" =&gt; "Cookie Banner Einstellungen"
-    "custom_settings_link_color" =&gt; "#7faf34"
-    "custom_settings_link_text_color" =&gt; "#ffffff"
+    "enabled" => true
+    "data_storage" => "pages"
+    "custom_settings_link_text" => "Cookie Banner Einstellungen"
+    "custom_settings_link_color" => "#7faf34"
+    "custom_settings_link_text_color" => "#ffffff"
 ]
 ```
 
