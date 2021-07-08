@@ -1,3 +1,8 @@
+# v0.1.2
+##  07/2021
+[](#improved)
+* Update blueprints.yaml
+
 # v0.1.1
 ##  06/2021
 [](#improved)

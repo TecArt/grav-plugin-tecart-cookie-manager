@@ -3,11 +3,13 @@ version: 0.1.0
 description: "TecArt cookie banner manager provides a cookie banner plugin with complete cookie management in admin and extended frontend views. The plugin is based on the popular **[CookieConsent](https://cookieconsent.osano.com/) JS-library** by Osano."
 icon: shield
 author:
-  name: Christiana Holland-Jobb
+  name: Christiana Holland-Jobb | TecArt GmbH
   email: christiana.holland-jobb@tecart.de
-homepage: http://www.tecart.de
-keywords: grav, plugin, cookie, banner, manager, cookieconsent, opt-in, opt-out
-docs:
+  url: http://www.tecart.de
+homepage: https://github.com/TecArt/grav-plugin-tecart-cookie-manager
+keywords: grav, plugin, cookie, banner, manager, cookieconsent, opt-in, opt-out, tecart
+bugs: https://github.com/TecArt/grav-plugin-tecart-cookie-manager/issues
+docs: https://github.com/TecArt/grav-plugin-tecart-cookie-manager/blob/main/README.md
 license: MIT
 
 dependencies:
