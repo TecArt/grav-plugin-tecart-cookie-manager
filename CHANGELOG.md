@@ -1,3 +1,8 @@
+# v0.1.3
+##  08/2021
+[](#improved)
+* Eliminate deprecated message  "Non-static method Grav\Plugin\TecartCookieManager\Classes\CookieManager\CookieManager::getCategoriesForBlueprintOptions() should not be called statically"
+
 # v0.1.2
 ##  07/2021
 [](#improved)
@@ -13,9 +18,9 @@
 
 1. plugin to tecart cookie manager
 2. use latest build version assets/vendor/cookieconsent/cookieconsent.min.js
-    * Actual cookie javascript source link:
-      https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js
-      https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css
+   * Actual cookie javascript source link:
+     https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js
+     https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css
 3. add admin menu entry for "cookie manager"
 4. add admin cookie manager functions with tabs for banner data, categories and scripts
 5. add frontend output with cookie consent banner and cookie settings modal
