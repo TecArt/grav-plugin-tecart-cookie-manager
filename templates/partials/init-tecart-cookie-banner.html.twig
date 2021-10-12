@@ -1,7 +1,7 @@
 {# Add listener to window load to initialize the cookie banner correct. #}
 window.addEventListener("load", function() {
 
-	var pluginConfig = {{ config.plugins["tecart-cookie-manager"]|json_encode }};
+    var pluginConfig = {{ config.plugins["tecart-cookie-manager"]|json_encode|raw }};
     var cookieBannerData = {{ cookieBannerData|json_encode|raw }};
     var cookieBannerScripts = {{ cookieBannerScripts["scripts"]|json_encode|raw }};
     var cookieBannerCategories = {{ cookieBannerCategories["categories"]|json_encode|raw }};
