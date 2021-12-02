@@ -158,24 +158,23 @@ class TecartCookieManagerPlugin extends Plugin {
             $cookieBannerCategories = CookieConsent::getYamlDataByType('cookie-manager-categories');
 
             // Add plugin CSS files to the grav assets.
-            $assets->addCss($this->assetsPath . $this->cookieConsentCSS);
-            $assets->addCss($this->assetsPath . $this->customCSS);
+            $assets->addCss($this->assetsPath . $this->cookieConsentCSS, array('rel' => 'preload'));
+            $assets->addCss($this->assetsPath . $this->customCSS, array('rel' => 'preload'));
 
             // Add plugin JS files to the grav assets.
-            $assets->addJs($this->assetsPath . $this->cookieConsentJS, array('group' => 'bottom'));
-            $assets->addJs($this->assetsPath . $this->customJS, array('group' => 'bottom'));
+            $assets->addJs($this->assetsPath . $this->cookieConsentJS, array('loading' => 'async'));
+            $assets->addJs($this->assetsPath . $this->customJS, array('loading' => 'async'));
 
             // Add inline JS to bottom of page to initialize cookie banner
             $assets->addInlineJs(
-                $twig->twig->render(
-                    $this->initTemplate,
-                    [
-                        'config' => $pluginConfig,
-                        'cookieBannerData' => $cookieBannerData,
-                        'cookieBannerScripts' => $cookieBannerScripts,
-                        'cookieBannerCategories' => $cookieBannerCategories,
-                    ]),
-                    array('group' => 'bottom')
+              $twig->twig->render(
+                $this->initTemplate,
+                [
+                  'config' => $pluginConfig,
+                  'cookieBannerData' => $cookieBannerData,
+                  'cookieBannerScripts' => $cookieBannerScripts,
+                  'cookieBannerCategories' => $cookieBannerCategories,
+                ])
             );
         }
     }

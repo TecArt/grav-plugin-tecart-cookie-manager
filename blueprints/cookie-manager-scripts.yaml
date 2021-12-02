@@ -63,9 +63,9 @@ form:
               type: textarea
               label:  PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE
               validate:
-                  type: textarea
-                  required: true
-                  message: PLUGIN_TECART_COOKIE_MANAGER.CODE_VALIDATE_MESSAGE
+                type: textarea
+                required: true
+                message: PLUGIN_TECART_COOKIE_MANAGER.CODE_VALIDATE_MESSAGE
             .code_position:
               type: toggle
               label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_POSITION
@@ -83,3 +83,28 @@ form:
               options:
                 script: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_TAG_SCRIPT
                 noscript: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_TAG_NOSCRIPT
+            .code_load_with_timeout:
+              type: toggle
+              label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_LOAD_WITH_TIMEOUT
+              default: 0
+              highlight: 0
+              options:
+                1: PLUGIN_TECART_COOKIE_MANAGER.YES
+                0: PLUGIN_TECART_COOKIE_MANAGER.NO
+            .code_load_with_timeout_time:
+              type: text
+              size: x-small
+              default: 3000
+              label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_LOAD_WITH_TIMEOUT_TIME
+              validate:
+                type: int
+                min: 0
+                max: 999999
+            .code_load_on_scroll:
+              type: toggle
+              label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_LOAD_ON_SCROLL
+              default: 0
+              highlight: 0
+              options:
+                1: PLUGIN_TECART_COOKIE_MANAGER.YES
+                0: PLUGIN_TECART_COOKIE_MANAGER.NO

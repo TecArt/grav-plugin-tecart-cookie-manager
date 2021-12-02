@@ -17,12 +17,19 @@ class TecartCookieBanner{
         if(this.cookieConsentCategoriesArray == null){  this.cookieConsentCategoriesArray = new Map(); }
         // JSON array with scripts for cookie cookieConsentScripts
         if(this.cookieConsentScriptsArray == null){  this.cookieConsentScriptsArray = new Map(); }
+        // JSON array with scripts for cookie cookieConsentScripts
+        if(this.cookieConsentOnScrollScriptsArray == null){ this.cookieConsentOnScrollScriptsArray = new Map(); }
+
         // Reading "cookieconsent_status" cookie
         this.cookieConsent = this.getCookieByName('cookieconsent_status');
         // Cookie for choosen output scripts to set active or not active
         this.cookieConsentScripts = this.getCookieByName('cookieconsent_scripts');
         // Cookie for choosen output categories to set active or not active
         this.cookieConsentCategories = this.getCookieByName('cookieconsent_categories');
+        // Cookie for include on scroll scripts
+        this.cookieConsentOnScrollScripts = this.getCookieByName('cookieconsent_onscroll_scripts');
+        // Cookie for knowing that page is scrolled
+        this.cookieConsentScrolled = this.getCookieByName('cookieconsent_scrolled');
     }
 
     init(){
@@ -30,7 +37,7 @@ class TecartCookieBanner{
         // Button settings
         let buttonSettings = '';
         if(this.getCookieBannerContent(this.cookieBannerData).buttonSettingsActive == 'activated'){
-           buttonSettings = '<a aria-label="settings" role="button" tabIndex="0" class="button cc-btn cc-setting tcb-settings-btn '+this.getCookieBannerContent(this.cookieBannerData).buttonSettingsLayout+'" id="tcb-settings">'+this.getCookieBannerContent(this.cookieBannerData).settings+'</a>';
+            buttonSettings = '<a aria-label="settings" role="button" tabIndex="0" class="button cc-btn cc-setting tcb-settings-btn '+this.getCookieBannerContent(this.cookieBannerData).buttonSettingsLayout+'" id="tcb-settings">'+this.getCookieBannerContent(this.cookieBannerData).settings+'</a>';
         }
 
         // Button deny
@@ -99,7 +106,6 @@ class TecartCookieBanner{
             this.setCookieConsentCategoriesArray();
             //get initial plugin script settings - just activated values from yaml
             this.setCookieConsentScriptsArray();
-
         }
         //remove if exists to update items
         this.removeSettingsModal();
@@ -108,7 +114,7 @@ class TecartCookieBanner{
     }
 
     /**
-     * Will allow all Cookies and set cookieconsent_status cookie to deny
+     * Will allow all Cookies and set cookieconsent_status cookie to allow
      */
     allowAllCookies() {
         //Set allow cookie
@@ -144,6 +150,16 @@ class TecartCookieBanner{
     }
 
     /**
+     * Will set cookieconsent_status cookie to settings
+     */
+    setScrolledCookie() {
+        //Set allow cookie
+        const expires = this.cookieExpireDate();
+        document.cookie = 'cookieconsent_scrolled=scrolled;' + expires + ';path=/';
+        console.log('Page was scrolled.');
+    }
+
+    /**
      * Push the allowed categories as json string to cookie
      */
     setConsentCategoriesToCookie(cookieConsentCategoriesArray) {
@@ -165,6 +181,18 @@ class TecartCookieBanner{
         const expires = this.cookieExpireDate();
         const json_string = JSON.stringify(cookieConsentScriptsArray);
         document.cookie = 'cookieconsent_scripts=' + json_string + ';' + expires + ';path=/';
+    }
+
+    /**
+     * Push the on scroll include scripts as json string to cookie
+     */
+    setConsentOnScrollScriptsToCookie(cookieConsentOnScrollScriptsArray) {
+        if(cookieConsentOnScrollScriptsArray instanceof Map){
+            cookieConsentOnScrollScriptsArray = Array.from(cookieConsentOnScrollScriptsArray);
+        }
+        const expires = this.cookieExpireDate();
+        const json_string = JSON.stringify(cookieConsentOnScrollScriptsArray);
+        document.cookie = 'cookieconsent_onscroll_scripts=' + json_string + ';' + expires + ';path=/';
     }
 
     /**
@@ -331,6 +359,7 @@ class TecartCookieBanner{
                 }
             }
         }
+        this.setConsentOnScrollScriptsToCookie(this.cookieConsentOnScrollScriptsArray);
     }
 
     /**
@@ -345,9 +374,13 @@ class TecartCookieBanner{
 
         if(code.length > 0){
 
-            const codeContent = data.code_title;
-            const codePos = data.code_position;
-            const codeTag = data.code_tag;
+            const codeContent             = data.code_title;
+            const codePos                 = data.code_position;
+            const codeTag                 = data.code_tag;
+            const codeLoadTimeout         = data.code_load_with_timeout;
+            const codeLoadTimeoutTime     = data.code_load_with_timeout_time;
+            const codeLoadOnScroll        = data.code_load_on_scroll;
+            const codeLoadOnScrollPercent = data.code_load_on_scroll_percent;
 
             let codeItem = "";
 
@@ -375,30 +408,72 @@ class TecartCookieBanner{
             // inner tag code
             codeItem.innerHTML = codeContent.trim();
 
-            //add script to head tag
-            if(codePos === 'head'){
-                // insertAdjacentHTML with script does not execute script after include
-                // document.head.insertAdjacentHTML('beforeend', codeItem);
-                document.head.append(codeItem);
+            if(this.cookieConsentScrolled === 'scrolled'){
+                // aliasing to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
+                const self = this;
+                if(codeLoadTimeout === '1'){
+                    // Delay some seconds in loading function
+                    setTimeout(function() {
+                        // bind self to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
+                        self.addScriptTagToDOM(codePos, codeItem);
+                    }, codeLoadTimeoutTime);
+                }
+                else{
+                    self.addScriptTagToDOM(codePos, codeItem);
+                }
             }
-            //add script to body at the beginning
-            else if(codePos === 'body-top'){
-                // insertAdjacentHTML with script does not execute script after include
-                // document.body.insertAdjacentHTML('afterbegin', codeItem);
-                document.body.prepend(codeItem);
+            else{
+                // load script after scroll must be called on load again so save scroll scripts in cookie
+                if(codeLoadOnScroll === '1'){
+                    this.cookieConsentOnScrollScriptsArray.set(scriptTitleEncoded,{"allowed":true});
+                }
+                // load script after timeout without scroll
+                else if(codeLoadTimeout === '1' && codeLoadOnScroll === '0'){
+                    // aliasing to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
+                    const self = this;
+                    // Delay some seconds in loading function
+                    setTimeout(function() {
+                        // bind to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
+                        self.addScriptTagToDOM(codePos, codeItem);
+                    }, codeLoadTimeoutTime);
+                }
+                else{
+                    this.addScriptTagToDOM(codePos, codeItem);
+                }
             }
-            //add script to body at the end
-            else {
-                // insertAdjacentHTML with script does not execute script after include
-                // document.body.insertAdjacentHTML('beforeend', codeItem);
-                //const head = document.getElementsByTagName('body')[0];
-                document.body.appendChild(codeItem);
-            }
+
+
         }
     }
 
     /**
-     * remove tags with given data-title     *
+     * add script tags to DOM
+     */
+    addScriptTagToDOM(codePos, codeItem) {
+
+        //add script to head tag
+        if(codePos === 'head'){
+            // insertAdjacentHTML with script does not execute script after include
+            // document.head.insertAdjacentHTML('beforeend', codeItem);
+            document.head.append(codeItem);
+        }
+        //add script to body at the beginning
+        else if(codePos === 'body-top'){
+            // insertAdjacentHTML with script does not execute script after include
+            // document.body.insertAdjacentHTML('afterbegin', codeItem);
+            document.body.prepend(codeItem);
+        }
+        //add script to body at the end
+        else {
+            // insertAdjacentHTML with script does not execute script after include
+            // document.body.insertAdjacentHTML('beforeend', codeItem);
+            //const head = document.getElementsByTagName('body')[0];
+            document.body.appendChild(codeItem);
+        }
+    }
+
+    /**
+     * remove tags with given data-title
      */
     removeCodeTagByTitle(dataTitle) {
 
@@ -506,9 +581,9 @@ class TecartCookieBanner{
                 let cat_toggler = '';
                 if (json_data[i].category_cookies === 'activated') {
                     cat_toggler = '<label class="tcb-switch tcb-categories-switch">' +
-                                    '<input type="checkbox" '+activated+' id="cat_'+catTitleEncoded+'" value="'+catTitleEncoded+'"  name="tcbCookieCategories"  />' +
-                                    '<span class="tcb-slider tcb-round"></span>' +
-                                  '</label>';
+                        '<input type="checkbox" '+activated+' id="cat_'+catTitleEncoded+'" value="'+catTitleEncoded+'"  name="tcbCookieCategories"  />' +
+                        '<span class="tcb-slider tcb-round"></span>' +
+                        '</label>';
                 }
 
                 //set checked tab
@@ -652,8 +727,10 @@ class TecartCookieBanner{
                 this.cookieConsentCategoriesArray.set(selectedCats[i],{allowed:true});
                 this.addScriptsFromAllowedCatToCookie(decodeURIComponent(selectedCats[i]));
             }
-
         }
+
+        this.setConsentOnScrollScriptsToCookie(this.cookieConsentOnScrollScriptsArray);
+        this.cookieConsentOnScrollScripts = this.getCookieByName('cookieconsent_onscroll_scripts');
 
         //fill cookies with data
         this.setConsentCategoriesToCookie(this.cookieConsentCategoriesArray);
@@ -670,6 +747,20 @@ class TecartCookieBanner{
         this.createScriptCode(data);
 
         window.location.reload();
+    }
+
+    /**
+     * checkboxes selected
+     */
+    onScrollIncludes() {
+
+        if(this.cookieConsentScrolled !== 'scrolled'){
+            this.cookieConsentScrolled = 'scrolled';
+            this.cookieConsentOnScrollScripts = this.getCookieByName('cookieconsent_onscroll_scripts');
+            //set cookie cookieconsent_status to dismiss
+            this.setScrolledCookie();
+            this.createScriptCode(this.cookieConsentOnScrollScripts);
+        }
     }
 
     /**
