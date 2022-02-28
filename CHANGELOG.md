@@ -1,7 +1,7 @@
 # v0.1.5
 ##  2/2022
 1. [](#new)
-* add pull requests from git hub to solve bug
+* add pull requests from git hub to solve bugs
 
 # v0.1.4
 ##  12/2021
