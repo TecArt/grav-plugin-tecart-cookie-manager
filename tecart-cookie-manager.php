@@ -158,8 +158,8 @@ class TecartCookieManagerPlugin extends Plugin {
             $cookieBannerCategories = CookieConsent::getYamlDataByType('cookie-manager-categories');
 
             // Add plugin CSS files to the grav assets.
-            $assets->addCss($this->assetsPath . $this->cookieConsentCSS, array('rel' => 'preload'));
-            $assets->addCss($this->assetsPath . $this->customCSS, array('rel' => 'preload'));
+            $assets->addCss($this->assetsPath . $this->cookieConsentCSS, array('rel' => 'stylesheet'));
+            $assets->addCss($this->assetsPath . $this->customCSS, array('rel' => 'stylesheet'));
 
             // Add plugin JS files to the grav assets.
             $assets->addJs($this->assetsPath . $this->cookieConsentJS, array('loading' => 'async'));
