@@ -1,3 +1,8 @@
+# v0.1.6
+##  2/2022
+1. [](#new)
+* fixd a missing |raw filter
+
 # v0.1.5
 ##  2/2022
 1. [](#new)
