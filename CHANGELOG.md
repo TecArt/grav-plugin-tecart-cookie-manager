@@ -1,3 +1,9 @@
+# v0.1.4
+##  12/2021
+1. [](#new)
+* add "include on scroll" and/or "include with delay" option for scripts
+* modify assets include in onTwigSiteVariables()
+    
 # v0.1.3
 ##  08/2021
 [](#improved)

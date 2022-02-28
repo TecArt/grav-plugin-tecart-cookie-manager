@@ -60,6 +60,9 @@ PLUGIN_TECART_COOKIE_MANAGER:
   SCRIPT_CODE_TAG: HTML Element
   SCRIPT_CODE_TAG_SCRIPT: script
   SCRIPT_CODE_TAG_NOSCRIPT: noscript
+  SCRIPT_CODE_LOAD_WITH_TIMEOUT: Zeitverzögertes Laden
+  SCRIPT_CODE_LOAD_WITH_TIMEOUT_TIME: Zeitverzögerung in ms (3s = 3000ms)
+  SCRIPT_CODE_LOAD_ON_SCROLL: Script beim ersten Scrollen laden
   YES: Ja
   NO: Nein
   TITLE_VALIDATE_MESSAGE: Bitte geben Sie den Titel an!

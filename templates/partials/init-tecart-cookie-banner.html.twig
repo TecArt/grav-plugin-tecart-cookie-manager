@@ -1,49 +1,61 @@
 {# Add listener to window load to initialize the cookie banner correct. #}
-window.addEventListener("load", function() {
+{#window.addEventListener("load", function() { #}
+document.addEventListener("DOMContentLoaded", function() {
+    {#console.log(document.readyState);#}
+    setTimeout(
+        function() {
+            var pluginConfig = {{ config.plugins["tecart-cookie-manager"]|json_encode }};
+            var cookieBannerData = {{ cookieBannerData|json_encode|raw }};
+            var cookieBannerScripts = {{ cookieBannerScripts["scripts"]|json_encode|raw }};
+            var cookieBannerCategories = {{ cookieBannerCategories["categories"]|json_encode|raw }};
+            var cookieBannerCategoriesData = {{ cookieBannerCategories|json_encode|raw }};
 
-    var pluginConfig = {{ config.plugins["tecart-cookie-manager"]|json_encode|raw }};
-    var cookieBannerData = {{ cookieBannerData|json_encode|raw }};
-    var cookieBannerScripts = {{ cookieBannerScripts["scripts"]|json_encode|raw }};
-    var cookieBannerCategories = {{ cookieBannerCategories["categories"]|json_encode|raw }};
-    var cookieBannerCategoriesData = {{ cookieBannerCategories|json_encode|raw }};
+            {# init Banner #}
+            var tcb = new TecartCookieBanner(cookieBannerData, cookieBannerScripts, cookieBannerCategories, cookieBannerCategoriesData);
+            tcb.init();
 
-    {# init Banner #}
-    var tcb = new TecartCookieBanner(cookieBannerData, cookieBannerScripts, cookieBannerCategories, cookieBannerCategoriesData);
-    tcb.init();
+            {# Get the settings button and open settings modal onclick #}
+            const openModalButton = document.getElementsByClassName("tcb-settings-btn")[0];
+            if(openModalButton != null){
+                openModalButton.onclick = function(){
+                    document.getElementById("tcb-settings-modal").style.display = "block";
+                };
+            }
 
-    {# Get the settings button and open settings modal onclick #}
-    const openModalButton = document.getElementsByClassName("tcb-settings-btn")[0];
-    if(openModalButton != null){
-        openModalButton.onclick = function(){
-            document.getElementById("tcb-settings-modal").style.display = "block";
-        };
-    }
+            {# close the settings modal #}
+            const closeModal = document.getElementById("tcb-settings-close-btn");
+            if(closeModal != null) {
+                closeModal.onclick = function() {
+                    document.getElementById("tcb-settings-modal").style.display = "none";
+                }
+            }
 
-    {# close the settings modal #}
-    const closeModal = document.getElementById("tcb-settings-close-btn");
-    if(closeModal != null) {
-        closeModal.onclick = function() {
-            document.getElementById("tcb-settings-modal").style.display = "none";
-        }
-    }
+            {# save settings button on settings modal #}
+            {# close all modals, show revoke button #}
+            const saveSettingsModal = document.getElementById("tcb-save-settings-btn");
+            if(saveSettingsModal != null) {
+                saveSettingsModal.addEventListener('click', () => {
+                    document.getElementById("tcb-settings-modal").style.display = "none";
+                    document.getElementsByClassName("cc-window")[0].style.display = "none";
+                    document.getElementsByClassName("cc-revoke")[0].style.display = "block";
+                    document.getElementsByClassName("cc-window")[0].classList.add("cc-invisible");
+                    tcb.onCheckboxSettings();
+                });
+            }
 
-    {# save settings button on settings modal #}
-    {# close all modals, show revoke button #}
-    const saveSettingsModal = document.getElementById("tcb-save-settings-btn");
-    if(saveSettingsModal != null) {
-        saveSettingsModal.addEventListener('click', () => {
-            document.getElementById("tcb-settings-modal").style.display = "none";
-            document.getElementsByClassName("cc-window")[0].style.display = "none";
-            document.getElementsByClassName("cc-revoke")[0].style.display = "block";
-            document.getElementsByClassName("cc-window")[0].classList.add("cc-invisible");
-            tcb.onCheckboxSettings();
-        });
-    }
+            {# prevent disabled checkboxes from click #}
+            const disabledCheckbox = document.querySelectorAll('input[name=tcbCookieScripts][disabled="disabled"]');
+            disabledCheckbox.onclick = function() {
+                return false;
+            };
 
-    {# prevent disabled checkboxes from click #}
-    const disabledCheckbox = document.querySelectorAll('input[name=tcbCookieScripts][disabled="disabled"]');
-    disabledCheckbox.onclick = function() {
-        return false;
-    };
+            {# scripts to load after scroll #}
+            var page_scrolled = tcb.getCookieByName('cookieconsent_scrolled');
+            if(page_scrolled !== 'scrolled') {
+                document.addEventListener ('scroll', function (){
+                    tcb.onScrollIncludes();
+                });
+            }
 
+        }, 3000);
 });
