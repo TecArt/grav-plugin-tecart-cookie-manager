@@ -24,7 +24,7 @@ class CookieConsent extends Data {
         //location of yaml files
         $dataStorage = 'user://data';
 
-        if(Grav::instance()['config']['plugins']['tecart-cookie-manager']['data_storage']) {
+        if(array_key_exists('data_storage', Grav::instance()['config']['plugins']['tecart-cookie-manager'])) {
             if (Grav::instance()['config']['plugins']['tecart-cookie-manager']['data_storage'] == "pages") {
                 $dataStorage = 'page://assets';
             }
