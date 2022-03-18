@@ -24,6 +24,7 @@ The Plugin requires the use of the Grav the admin plugin.
 - admin setting default active/not active means, if script is included in website
 - there is an option to set the script position (body-top, body-bottom, head-bottom)
 - there is an option to include the script after first scroll of page and/or a timeout/delay
+- there is an option to include the script only on specific pages
 - you can override styles in your own css
 
 **Note**

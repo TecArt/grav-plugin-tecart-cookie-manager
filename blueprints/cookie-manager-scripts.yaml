@@ -108,3 +108,19 @@ form:
               options:
                 1: PLUGIN_TECART_COOKIE_MANAGER.YES
                 0: PLUGIN_TECART_COOKIE_MANAGER.NO
+            .code_load_on_pages:
+              type: pages
+              size: large
+              classes: fancy
+              label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_LOAD_ON_PAGES
+              show_all: false
+              show_modular: false
+              show_root: false
+              show_fullpath: false
+              multiple: true
+              help: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_LOAD_ON_PAGES_HELP
+              validate:
+                type: array
+            .code_load_on_pages_info:
+              type: display
+              content: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_CODE_LOAD_ON_PAGES_HELP

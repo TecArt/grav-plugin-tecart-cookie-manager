@@ -1,10 +1,15 @@
+# v0.1.7
+## 3/2022
+1. [](#new)
+* add option to include a script only on specific pages
+
 # v0.1.6
-##  2/2022
+## 2/2022
 1. [](#new)
 * fix a missing |raw filter
 
 # v0.1.5
-##  2/2022
+## 2/2022
 1. [](#new)
 * add pull requests from git hub to solve bugs
 

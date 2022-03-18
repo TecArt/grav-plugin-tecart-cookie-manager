@@ -37,7 +37,7 @@ class TecartCookieBanner{
         // Button settings
         let buttonSettings = '';
         if(this.getCookieBannerContent(this.cookieBannerData).buttonSettingsActive == 'activated'){
-            buttonSettings = '<a aria-label="settings" role="button" tabIndex="0" class="button cc-btn cc-setting tcb-settings-btn '+this.getCookieBannerContent(this.cookieBannerData).buttonSettingsLayout+'" id="tcb-settings">'+this.getCookieBannerContent(this.cookieBannerData).settings+'</a>';
+           buttonSettings = '<a aria-label="settings" role="button" tabIndex="0" class="button cc-btn cc-setting tcb-settings-btn '+this.getCookieBannerContent(this.cookieBannerData).buttonSettingsLayout+'" id="tcb-settings">'+this.getCookieBannerContent(this.cookieBannerData).settings+'</a>';
         }
 
         // Button deny
@@ -374,28 +374,27 @@ class TecartCookieBanner{
 
         if(code.length > 0){
 
-            const codeContent             = data.code_title;
-            const codePos                 = data.code_position;
-            const codeTag                 = data.code_tag;
-            const codeLoadTimeout         = data.code_load_with_timeout;
-            const codeLoadTimeoutTime     = data.code_load_with_timeout_time;
-            const codeLoadOnScroll        = data.code_load_on_scroll;
+            const codeContent = data.code_title;
+            const codePos = data.code_position;
+            const codeTag = data.code_tag;
+            const codeLoadTimeout = data.code_load_with_timeout;
+            const codeLoadTimeoutTime = data.code_load_with_timeout_time;
+            const codeLoadOnScroll = data.code_load_on_scroll;
             const codeLoadOnScrollPercent = data.code_load_on_scroll_percent;
+            const codeLoadOnPages = ("code_load_on_pages" in data) ? data.code_load_on_pages : [];
+            const currPagePath = window.location.pathname;
+
+            let pageAllowed = true;
+            // do not include code when current page not in array of allowed pages
+            if (codeLoadOnPages.length > 0 && codeLoadOnPages.indexOf(currPagePath) === -1) {
+                pageAllowed = false;
+            }
 
             let codeItem = "";
 
-            if(codeTag === 'noscript'){
-                // insertAdjacentHTML with script does not execute script after include
-                // codeItem = '<noscript data-title="'+scriptTitle.trim()+'" data-tcb="'+scriptTitleEncoded+'" data-position="tcb-' + codePos + '" >' +
-                //     codeContent.trim() +
-                //     '</noscript>';
+            if (codeTag === 'noscript') {
                 codeItem = document.createElement("noscript");
-            }
-            else {
-                // insertAdjacentHTML with script does not execute script after include
-                // codeItem = '<script type="text/javascript" data-title="'+scriptTitle.trim()+'" data-tcb="'+scriptTitleEncoded+'" data-position="tcb-' + codePos + '" async >' +
-                //     codeContent.trim() +
-                //     '</script>';
+            } else {
                 codeItem = document.createElement("script");
                 codeItem.setAttribute('type', 'text/javascript');
             }
@@ -408,47 +407,44 @@ class TecartCookieBanner{
             // inner tag code
             codeItem.innerHTML = codeContent.trim();
 
-            if(this.cookieConsentScrolled === 'scrolled'){
-                // aliasing to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
-                const self = this;
-                if(codeLoadTimeout === '1'){
-                    // Delay some seconds in loading function
-                    setTimeout(function() {
-                        // bind self to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
-                        self.addScriptTagToDOM(codePos, codeItem);
-                    }, codeLoadTimeoutTime);
-                }
-                else{
-                    self.addScriptTagToDOM(codePos, codeItem);
-                }
-            }
-            else{
-                // load script after scroll must be called on load again so save scroll scripts in cookie
-                if(codeLoadOnScroll === '1'){
-                    this.cookieConsentOnScrollScriptsArray.set(scriptTitleEncoded,{"allowed":true});
-                }
-                // load script after timeout without scroll
-                else if(codeLoadTimeout === '1' && codeLoadOnScroll === '0'){
+            if (pageAllowed) {
+                if (this.cookieConsentScrolled === 'scrolled') {
                     // aliasing to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
                     const self = this;
-                    // Delay some seconds in loading function
-                    setTimeout(function() {
-                        // bind to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
+                    if (codeLoadTimeout === '1') {
+                        // Delay some seconds in loading function
+                        setTimeout(function () {
+                            // bind self to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
+                            self.addScriptTagToDOM(codePos, codeItem);
+                        }, codeLoadTimeoutTime);
+                    } else {
                         self.addScriptTagToDOM(codePos, codeItem);
-                    }, codeLoadTimeoutTime);
-                }
-                else{
-                    this.addScriptTagToDOM(codePos, codeItem);
+                    }
+                } else {
+                    // load script after scroll must be called on load again so save scroll scripts in cookie
+                    if (codeLoadOnScroll === '1') {
+                        this.cookieConsentOnScrollScriptsArray.set(scriptTitleEncoded, {"allowed": true});
+                    }
+                    // load script after timeout without scroll
+                    else if (codeLoadTimeout === '1' && codeLoadOnScroll === '0') {
+                        // aliasing to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
+                        const self = this;
+                        // Delay some seconds in loading function
+                        setTimeout(function () {
+                            // bind to avoid Uncaught TypeError: this.addScriptTagToDOM is not a function while nested call
+                            self.addScriptTagToDOM(codePos, codeItem);
+                        }, codeLoadTimeoutTime);
+                    } else {
+                        this.addScriptTagToDOM(codePos, codeItem);
+                    }
                 }
             }
-
-
         }
     }
 
     /**
      * add script tags to DOM
-     */
+    */
     addScriptTagToDOM(codePos, codeItem) {
 
         //add script to head tag
@@ -474,7 +470,7 @@ class TecartCookieBanner{
 
     /**
      * remove tags with given data-title
-     */
+    */
     removeCodeTagByTitle(dataTitle) {
 
         if(dataTitle !== ''){
@@ -581,9 +577,9 @@ class TecartCookieBanner{
                 let cat_toggler = '';
                 if (json_data[i].category_cookies === 'activated') {
                     cat_toggler = '<label class="tcb-switch tcb-categories-switch">' +
-                        '<input type="checkbox" '+activated+' id="cat_'+catTitleEncoded+'" value="'+catTitleEncoded+'"  name="tcbCookieCategories"  />' +
-                        '<span class="tcb-slider tcb-round"></span>' +
-                        '</label>';
+                                    '<input type="checkbox" '+activated+' id="cat_'+catTitleEncoded+'" value="'+catTitleEncoded+'"  name="tcbCookieCategories"  />' +
+                                    '<span class="tcb-slider tcb-round"></span>' +
+                                  '</label>';
                 }
 
                 //set checked tab
@@ -751,7 +747,7 @@ class TecartCookieBanner{
 
     /**
      * checkboxes selected
-     */
+    */
     onScrollIncludes() {
 
         if(this.cookieConsentScrolled !== 'scrolled'){

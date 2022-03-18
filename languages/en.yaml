@@ -63,6 +63,8 @@ PLUGIN_TECART_COOKIE_MANAGER:
   SCRIPT_CODE_LOAD_WITH_TIMEOUT: Load script with timeout
   SCRIPT_CODE_LOAD_WITH_TIMEOUT_TIME: Timeout in ms (3s = 3000ms)
   SCRIPT_CODE_LOAD_ON_SCROLL: Load script on scroll
+  SCRIPT_CODE_LOAD_ON_PAGES: Load script on pages
+  SCRIPT_CODE_LOAD_ON_PAGES_HELP: Include the script only on specific pages
   YES: yes
   NO: no
   TITLE_VALIDATE_MESSAGE: Please enter a title!

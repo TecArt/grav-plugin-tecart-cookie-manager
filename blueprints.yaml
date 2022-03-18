@@ -1,11 +1,11 @@
 name: TecArt Cookie Manager
-version: 0.1.6
+version: 0.1.7
 description: "TecArt cookie banner manager provides a cookie banner plugin with complete cookie management in admin and extended frontend views. The plugin is based on the popular **[CookieConsent](https://cookieconsent.osano.com/) JS-library** by Osano."
 icon: shield
 author:
-  name: Christiana Holland-Jobb | TecArt GmbH
-  email: christiana.holland-jobb@tecart.de
-  url: http://www.tecart.de
+    name: Christiana Holland-Jobb | TecArt GmbH
+    email: christiana.holland-jobb@tecart.de
+    url: https://www.tecart.de
 homepage: https://github.com/TecArt/grav-plugin-tecart-cookie-manager
 keywords: grav, plugin, cookie, banner, manager, cookieconsent, opt-in, opt-out, tecart
 bugs: https://github.com/TecArt/grav-plugin-tecart-cookie-manager/issues
@@ -13,53 +13,53 @@ docs: https://github.com/TecArt/grav-plugin-tecart-cookie-manager/blob/main/READ
 license: MIT
 
 dependencies:
-  - { name: grav, version: '>=1.6.27' }
-  - { name: admin, version: '>=1.9.16' }
+    - { name: grav, version: '>=1.7.23' }
+    - { name: admin, version: '>=1.10.23' }
 
 form:
-  validation: strict
-  fields:
-    enabled:
-      type: toggle
-      label: PLUGIN_ADMIN.PLUGIN_STATUS
-      highlight: 1
-      default: 0
-      options:
-        1: PLUGIN_ADMIN.ENABLED
-        0: PLUGIN_ADMIN.DISABLED
-      validate:
-        type: bool
-    data_storage:
-      type: select
-      size: small
-      classes: fancy
-      label: Data Storage
-      default: data
-      options:
-        pages: pages/assets
-        data: user/data
-    custom_settings_link:
-      type: section
-      title: Custom Link to Settings
-      underline: true
-      fields:
-        custom_settings_link_info:
-          type: display
-          label: Info
-          markdown: true
-          content: "Texts and colors, if a link to open the setting should be set anywhere in the theme, but the text is maintained in the admin panel. It is important to use the **tcb-settings-link** class, which opens the modal. Text and color can be called up in Twig via the plugin config variables. See readme for more info."
-        custom_settings_link_text:
-          type: text
-          size: large
-          default: Cookie Banner Einstellungen
-          label: Link Text
-        custom_settings_link_color:
-          type: text
-          size: small
-          label: Background color if button
-          default: '#7faf34'
-        custom_settings_link_text_color:
-          type: text
-          size: small
-          label: Text color
-          default: '#ffffff'
+    validation: strict
+    fields:
+        enabled:
+            type: toggle
+            label: PLUGIN_ADMIN.PLUGIN_STATUS
+            highlight: 1
+            default: 0
+            options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+            validate:
+                type: bool
+        data_storage:
+            type: select
+            size: small
+            classes: fancy
+            label: Data Storage
+            default: data
+            options:
+                pages: pages/assets
+                data: user/data
+        custom_settings_link:
+            type: section
+            title: Custom Link to Settings
+            underline: true
+            fields:
+                custom_settings_link_info:
+                    type: display
+                    label: Info
+                    markdown: true
+                    content: "Texts and colors, if a link to open the setting should be set anywhere in the theme, but the text is maintained in the admin panel. It is important to use the **tcb-settings-link** class, which opens the modal. Text and color can be called up in Twig via the plugin config variables. See readme for more info."
+                custom_settings_link_text:
+                    type: text
+                    size: large
+                    default: Cookie Banner Einstellungen
+                    label: Link Text
+                custom_settings_link_color:
+                    type: text
+                    size: small
+                    label: Background color if button
+                    default: '#7faf34'
+                custom_settings_link_text_color:
+                    type: text
+                    size: small
+                    label: Text color
+                    default: '#ffffff'

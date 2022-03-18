@@ -63,6 +63,8 @@ PLUGIN_TECART_COOKIE_MANAGER:
   SCRIPT_CODE_LOAD_WITH_TIMEOUT: Zeitverzögertes Laden
   SCRIPT_CODE_LOAD_WITH_TIMEOUT_TIME: Zeitverzögerung in ms (3s = 3000ms)
   SCRIPT_CODE_LOAD_ON_SCROLL: Script beim ersten Scrollen laden
+  SCRIPT_CODE_LOAD_ON_PAGES: Script auf Seiten laden
+  SCRIPT_CODE_LOAD_ON_PAGES_HELP: Es ist möglich die Suche durch Eintippen des Seitennamens in das Feld abzukürzen.<br />Script nur auf den ausgewählten Seiten laden.
   YES: Ja
   NO: Nein
   TITLE_VALIDATE_MESSAGE: Bitte geben Sie den Titel an!
