@@ -25,6 +25,7 @@ form:
           rows: 5
           label: PLUGIN_TECART_COOKIE_MANAGER.SCRIPT_TEXT
           validate:
+            required: true
             type: textarea
         .script_category:
           type: select

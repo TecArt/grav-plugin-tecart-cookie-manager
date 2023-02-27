@@ -37,7 +37,7 @@ class TecartCookieBanner{
         // Button settings
         let buttonSettings = '';
         if(this.getCookieBannerContent(this.cookieBannerData).buttonSettingsActive == 'activated'){
-           buttonSettings = '<a aria-label="settings" role="button" tabIndex="0" class="button cc-btn cc-setting tcb-settings-btn '+this.getCookieBannerContent(this.cookieBannerData).buttonSettingsLayout+'" id="tcb-settings">'+this.getCookieBannerContent(this.cookieBannerData).settings+'</a>';
+            buttonSettings = '<a aria-label="settings" role="button" tabIndex="0" class="button cc-btn cc-setting tcb-settings-btn '+this.getCookieBannerContent(this.cookieBannerData).buttonSettingsLayout+'" id="tcb-settings">'+this.getCookieBannerContent(this.cookieBannerData).settings+'</a>';
         }
 
         // Button deny
@@ -444,7 +444,7 @@ class TecartCookieBanner{
 
     /**
      * add script tags to DOM
-    */
+     */
     addScriptTagToDOM(codePos, codeItem) {
 
         //add script to head tag
@@ -470,7 +470,7 @@ class TecartCookieBanner{
 
     /**
      * remove tags with given data-title
-    */
+     */
     removeCodeTagByTitle(dataTitle) {
 
         if(dataTitle !== ''){
@@ -577,9 +577,9 @@ class TecartCookieBanner{
                 let cat_toggler = '';
                 if (json_data[i].category_cookies === 'activated') {
                     cat_toggler = '<label class="tcb-switch tcb-categories-switch">' +
-                                    '<input type="checkbox" '+activated+' id="cat_'+catTitleEncoded+'" value="'+catTitleEncoded+'"  name="tcbCookieCategories"  />' +
-                                    '<span class="tcb-slider tcb-round"></span>' +
-                                  '</label>';
+                        '<input type="checkbox" '+activated+' id="cat_'+catTitleEncoded+'" value="'+catTitleEncoded+'"  name="tcbCookieCategories"  />' +
+                        '<span class="tcb-slider tcb-round"></span>' +
+                        '</label>';
                 }
 
                 //set checked tab
@@ -702,7 +702,7 @@ class TecartCookieBanner{
         this.cookieConsentScriptsArray = new Map();
 
         //get selected scripts
-        selectedScripts = Array.from(document.querySelectorAll('input[name=tcbCookieScripts]'))
+        selectedScripts = Array.from(document.querySelectorAll('input[name=tcbCookieScripts], input[name=tcbDisabledCookieScripts]'))
             .filter((checkbox) => checkbox.checked)
             .map((checkbox) => checkbox.value);
 
@@ -712,6 +712,7 @@ class TecartCookieBanner{
                 this.cookieConsentScriptsArray.set(selectedScripts[i],{allowed:true});
             }
         }
+
         //get selected categories
         selectedCats = Array.from(document.querySelectorAll('input[name=tcbCookieCategories]'))
             .filter((checkbox) => checkbox.checked)
@@ -747,7 +748,7 @@ class TecartCookieBanner{
 
     /**
      * checkboxes selected
-    */
+     */
     onScrollIncludes() {
 
         if(this.cookieConsentScrolled !== 'scrolled'){
