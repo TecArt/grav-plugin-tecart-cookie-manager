@@ -1,8 +1,14 @@
-# v0.1.8
+# v0.1.9
 ## 2/2023
 1. [](#improved)
 * make script text label required in blueprint
 * fix bug that removes active scripts with disable toggler
+
+# v0.1.8
+## 1/2023
+1. [](#improved)
+* Add french translation
+
 
 # v0.1.7
 ## 3/2022
