@@ -1,7 +1,7 @@
-# v0.1.10
-## 08/15/2023
+# v0.1.11
+## 08/17/2023
 1. [](#improved)
-    * Change blueprint information and changelog format
+    * Add backlinks
 
 # v0.1.9
 ## 02/02/2023
