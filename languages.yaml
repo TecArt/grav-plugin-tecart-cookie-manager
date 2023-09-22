@@ -2,11 +2,11 @@ en:
   PLUGIN_TECART_COOKIE_MANGER:
     COOKIE_MANAGER: "Cookie Manager"
     COOKIE_MANAGER_SUB: "by TecArt GmbH"
-    CATEGORIES: Kategorien
+    CATEGORIES: Categories
     BANNER: Banner
     SCRIPTS: Scripts
     SCRIPT_TITLE: Script title
-    BANNER_TEXT_DEFAULT: Sie helfen uns, die Nutzung unserer Websites besser zu verstehen, damit wir Ihnen maßgeschneiderte Inhalten anbieten können.
+    BANNER_TEXT_DEFAULT: They help us better understand how our websites are used so that we can offer you tailored content.
     TITLE_VALIDATE_MESSAGE: Please enter a title!
     CODE_VALIDATE_MESSAGE: Please enter script code!
     TEXT_VALIDATE_MESSAGE: Please enter a description!
@@ -40,3 +40,17 @@ fr:
     TEXT_VALIDATE_MESSAGE: Veuillez indiquer une description !
     SCRIPT_CATEGORY_VALIDATE_MESSAGE: Veuillez indiquer une catégorie !
     COOKIE_MANAGER_SCRIPT_ADVISE: Veuillez créer au moins une catégorie que vous pouvez affecter au script.
+es:
+  PLUGIN_TECART_COOKIE_MANGER:
+    COOKIE_MANAGER: "Gestor de Cookies"
+    COOKIE_MANAGER_SUB: "por TecArt GmbH"
+    CATEGORIES: Categorías
+    BANNER: Banner
+    SCRIPTS: Scripts
+    SCRIPT_TITLE: Título del Script
+    BANNER_TEXT_DEFAULT: Nos ayudan a comprender mejor cómo se utilizan nuestros sitios web para que podamos ofrecerle contenido personalizado.
+    TITLE_VALIDATE_MESSAGE: ¡Por favor, introduzca un título!
+    CODE_VALIDATE_MESSAGE: ¡Por favor, introduzca el código del script!
+    TEXT_VALIDATE_MESSAGE: ¡Por favor, introduzca una descripción!
+    SCRIPT_CAT_VALIDATE_MESSAGE: ¡Por favor, establezca una categoría!
+    COOKIE_MANAGER_SCRIPT_ADVISE: ¡Por favor, crea mínimo una categoría para asignar al script.
