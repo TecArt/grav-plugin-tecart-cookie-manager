@@ -1,5 +1,5 @@
 PLUGIN_TECART_COOKIE_MANAGER:
-  COOKIE_MANAGER: "Gestor de Cookies"
+  COOKIE_MANAGER: "Administrador de Cookies"
   COOKIE_MANAGER_SUB: "por TecArt GmbH"
   CATEGORIES: Categorías
   BANNER: Banner
@@ -28,7 +28,7 @@ PLUGIN_TECART_COOKIE_MANAGER:
   BUTTON_LAYOUT_1: transparente
   BUTTON_TEXT: Texto del botón
   BUTTON_ICON: Icono fontawesome del botón
-  BUTTON_ICON_LINK: usable icons - <a href="https://fontawesome.com/icons?d=gallery&s=solid&m=free" target="_blank" alt="FontAwesome Galary">FontAwesome</a>
+  BUTTON_ICON_LINK: Iconos utilizables - <a href="https://fontawesome.com/icons?d=gallery&s=solid&m=free" target="_blank" alt="FontAwesome Gallery">FontAwesome</a>
   BUTTON_SAVE: Botón Guardar
   BUTTON_ACTIVE: Botón Activo
   BUTTON_ACTIVATED: activo
