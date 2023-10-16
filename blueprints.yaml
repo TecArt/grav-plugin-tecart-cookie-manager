@@ -51,7 +51,7 @@ form:
                 custom_settings_link_text:
                     type: text
                     size: large
-                    default: PLUGIN_TECART_COOKIE_MANGER.CUSTOM_SETTINGS.LINK_TEXT.DEFAULT
+                    default: Cookie Banner Einstellungen
                     label: PLUGIN_TECART_COOKIE_MANGER.CUSTOM_SETTINGS.LINK_TEXT.LABEL
                 custom_settings_link_color:
                     type: text
