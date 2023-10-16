@@ -33,33 +33,33 @@ form:
             type: select
             size: small
             classes: fancy
-            label: Data Storage
+            label: PLUGIN_TECART_COOKIE_MANGER.DATA_STORAGE
             default: data
             options:
                 pages: pages/assets
                 data: user/data
         custom_settings_link:
             type: section
-            title: Custom Link to Settings
+            title: PLUGIN_TECART_COOKIE_MANGER.CUSTOM_SETTINGS.TITLE
             underline: true
             fields:
                 custom_settings_link_info:
                     type: display
-                    label: Info
+                    label: PLUGIN_TECART_COOKIE_MANGER.CUSTOM_SETTINGS.LINK_INFO.LABEL
                     markdown: true
-                    content: "Texts and colors, if a link to open the setting should be set anywhere in the theme, but the text is maintained in the admin panel. It is important to use the **tcb-settings-link** class, which opens the modal. Text and color can be called up in Twig via the plugin config variables. See readme for more info."
+                    content: PLUGIN_TECART_COOKIE_MANGER.CUSTOM_SETTINGS.LINK_INFO.CONTENT
                 custom_settings_link_text:
                     type: text
                     size: large
                     default: Cookie Banner Einstellungen
-                    label: Link Text
+                    label: PLUGIN_TECART_COOKIE_MANGER.CUSTOM_SETTINGS.LINK_TEXT.LABEL
                 custom_settings_link_color:
                     type: text
                     size: small
-                    label: Background color if button
+                    label: PLUGIN_TECART_COOKIE_MANGER.CUSTOM_SETTINGS.LINK_BACKGROUND_COLOR
                     default: '#7faf34'
                 custom_settings_link_text_color:
                     type: text
                     size: small
-                    label: Text color
+                    label: PLUGIN_TECART_COOKIE_MANGER.CUSTOM_SETTINGS.LINK_TEXT_COLOR
                     default: '#ffffff'

@@ -1,0 +1,73 @@
+PLUGIN_TECART_COOKIE_MANAGER:
+  COOKIE_MANAGER: "Administrador de Cookies"
+  COOKIE_MANAGER_SUB: "por TecArt GmbH"
+  CATEGORIES: Categorías
+  BANNER: Banner
+  SCRIPTS: Scripts
+  BANNER_SECTION_CONTENT: Contenido del banner
+  BANNER_TEXT: Texto del banner
+  BANNER_TEXT_DEFAULT: Las cookies nos ayudan a comprender mejor el uso de nuestros sitios web para que podamos ofrecerle contenido personalizado.
+  BANNER_TITLE: Título del banner
+  BANNER_TITLE_HELP: Título del baner principal de cookies
+  BANNER_TITLE_DEFAULT: Las cookies son buenas para usted
+  BANNER_CAT_TITLE: Título del banner de categoría
+  BANNER_CAT_TITLE_HELP: Título del banner con la descripción general de la categoría
+  BANNER_CAT_TITLE_DEFAULT: Su administrador personal de banner de cookies
+  BANNER_SECTION_BUTTON_ACCEPT: Botón Aceptar
+  BUTTON_ACCEPT_TEXT_DEFAULT: Aceptar
+  BANNER_SECTION_BUTTON_SETTINGS: Botón configuración
+  BUTTON_SETTINGS_TEXT_DEFAULT: Configuración
+  SETTINGS_EMPTY: Texto si no hay categorías o scripts disponibles.
+  BANNER_SECTION_BUTTON_DENY: Botón Denegar
+  BANNER_SECTION_REVOKABLE: Banner revocable
+  BANNER_REVOKABLE_TEXT: Texto del banner revocable
+  BUTTON_REVOKABLE_COLOR: Bolor de fondo del botón
+  BUTTON_REVOKABLE_TEXT_COLOR: Color del texto del botón
+  BUTTON_LAYOUT: Diseño del botón
+  BUTTON_LAYOUT_2: estándar
+  BUTTON_LAYOUT_1: transparente
+  BUTTON_TEXT: Texto del botón
+  BUTTON_ICON: Icono fontawesome del botón
+  BUTTON_ICON_LINK: usable icons - <a href="https://fontawesome.com/icons?d=gallery&s=solid&m=free" target="_blank" alt="FontAwesome Galary">FontAwesome</a>
+  BUTTON_SAVE: Botón Guardar
+  BUTTON_ACTIVE: Botón Activo
+  BUTTON_ACTIVATED: activo
+  BUTTON_DEACTIVATED: inactivo
+  CATEGORY_TITLE: Título de la categoría
+  CATEGORY_TEXT:  Texto de la categoría
+  CATEGORY_ADD: Añadir categoría
+  CATEGORY_COOKIES: Habilitar todas las cookies
+  CATEGORY_COOKIES_ACTIVATED: Mostrar
+  CATEGORY_COOKIES_DEACTIVATED: Ocultar
+  CATEGORY_COOKIES_HELP: Ayuda
+  CATEGORY_COOKIES_HELPTEXT: Si está visible, se genera el alternador de categoría, se establece en "activado" y todos los scripts/cookies en esta categoría se activan inicialmente. Si no está visible, no se mostrará ningún alternador.
+  CATEGORY_SAVE_SETTINGS_BTN: Guardar configuración
+  SCRIPT_ADD: Nuevo script
+  SCRIPT_TITLE: Título del script
+  SCRIPT_TEXT: Texto del script
+  SCRIPT_CATEGORY: Categoría
+  SCRIPT_COOKIES_STANDARD: Por defecto (script incluido o no)
+  SCRIPT_COOKIES: Registrarse (mostrar casilla de verificación en el banner)
+  SCRIPT_COOKIES_STANDARD_ACTIVATED: activo
+  SCRIPT_COOKIES_STANDARD_DEACTIVATED: inactivo
+  SCRIPT_LOAD_ON_SCROLL_PERCENT: Cargar después de % de desplazamiento
+  SCRIPT_CODE: Código (las etiquetas de script se generaron automáticamente)
+  SCRIPT_CODE_ADD: Nuevo código
+  SCRIPT_CODE_POSITION: Posición
+  SCRIPT_CODE_BODY_TOP: Inicio del cuerpo de HTML
+  SCRIPT_CODE_BODY_BOTTOM: Final del cuerpo de HTML
+  SCRIPT_CODE_HEAD: Encabezado HTML
+  SCRIPT_CODE_TAG: Elemento de etiqueta HTML
+  SCRIPT_CODE_TAG_SCRIPT: script
+  SCRIPT_CODE_TAG_NOSCRIPT: noscript
+  SCRIPT_CODE_LOAD_WITH_TIMEOUT: Carga el script con retardo
+  SCRIPT_CODE_LOAD_WITH_TIMEOUT_TIME: Tiempo de espera en ms (3s = 3000ms)
+  SCRIPT_CODE_LOAD_ON_SCROLL: Cargar script al desplazarse
+  SCRIPT_CODE_LOAD_ON_PAGES: Cargar script en páginas
+  SCRIPT_CODE_LOAD_ON_PAGES_HELP: Incluir el script solo en páginas específicas.
+  YES: si
+  NO: no
+  TITLE_VALIDATE_MESSAGE: ¡Por favor, introduzca un título!
+  CODE_VALIDATE_MESSAGE: ¡Por favor, introduzca el código del script!
+  TEXT_VALIDATE_MESSAGE: ¡Por favor, introduzca una descripción!
+  SCRIPT_CATEGORY_VALIDATE_MESSAGE: ¡Por favor, establezca una categoría!
