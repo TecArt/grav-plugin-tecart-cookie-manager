@@ -1,3 +1,8 @@
+# v0.1.13
+## 04/04/2024
+1. [](#improved)
+   * Add spanish translation
+   
 # v0.1.12
 ## 08/17/2023
 1. [](#improved)
