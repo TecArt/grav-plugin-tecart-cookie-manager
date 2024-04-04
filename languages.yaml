@@ -1,12 +1,23 @@
 en:
   PLUGIN_TECART_COOKIE_MANGER:
+    DATA_STORAGE: Data Storage
+    CUSTOM_SETTINGS:
+      TITLE: Custom Link to Settings
+      LINK_INFO:
+        LABEL: Info
+        CONTENT: "Texts and colors, if a link to open the setting should be set anywhere in the theme, but the text is maintained in the admin panel. It is important to use the **tcb-settings-link** class, which opens the modal. Text and color can be called up in Twig via the plugin config variables. See readme for more info."
+      LINK_TEXT:
+        LABEL: Link Text
+        DEFAULT: Cookie Banner Einstellungen
+      LINK_BACKGROUND_COLOR: Background color if button
+      LINK_TEXT_COLOR: Text color
     COOKIE_MANAGER: "Cookie Manager"
     COOKIE_MANAGER_SUB: "by TecArt GmbH"
-    CATEGORIES: Kategorien
+    CATEGORIES: Categories
     BANNER: Banner
     SCRIPTS: Scripts
     SCRIPT_TITLE: Script title
-    BANNER_TEXT_DEFAULT: Sie helfen uns, die Nutzung unserer Websites besser zu verstehen, damit wir Ihnen maßgeschneiderte Inhalten anbieten können.
+    BANNER_TEXT_DEFAULT: They help us better understand how our websites are used so that we can offer you tailored content.
     TITLE_VALIDATE_MESSAGE: Please enter a title!
     CODE_VALIDATE_MESSAGE: Please enter script code!
     TEXT_VALIDATE_MESSAGE: Please enter a description!
@@ -14,6 +25,17 @@ en:
     COOKIE_MANAGER_SCRIPT_ADVISE: Please create min. one category that you can assign to the script.
 de:
   PLUGIN_TECART_COOKIE_MANGER:
+    DATA_STORAGE: Datenspeicher
+    CUSTOM_SETTINGS:
+      TITLE: Benutzerdefinierter Link zu den Einstellungen
+      LINK_INFO:
+        LABEL: Information
+        CONTENT: "Texte und Farben, wenn ein Link zum Öffnen von Einstellungen an einer beliebigen Stelle im Theme gesetzt werden soll, der Text jedoch im Admin-Panel verbleibt. Es ist wichtig, die Klasse **tcb-settings-link** zu verwenden, die das öffnet modal. Text und Farbe können in Twig über die Konfigurationsvariablen des Plugins abgerufen werden. Weitere Informationen finden Sie in der Readme-Datei."
+      LINK_TEXT:
+        LABEL: Linktext
+        DEFAULT: Cookie-Banner-Konfiguration
+      LINK_BACKGROUND_COLOR: Hintergrundfarbe der Schaltfläche
+      LINK_TEXT_COLOR: Textfarbe
     COOKIE_MANAGER: "Cookie Manager"
     COOKIE_MANAGER_SUB: "by TecArt GmbH"
     CATEGORIES: Kategorien
@@ -28,6 +50,17 @@ de:
     COOKIE_MANAGER_SCRIPT_ADVISE: Bitte legen Sie zuerst mindestens eine Kategorie an, die Sie dem Script zuordnen können.
 fr:
   PLUGIN_TECART_COOKIE_MANGER:
+    DATA_STORAGE: Stockage de données
+    CUSTOM_SETTINGS:
+      TITLE: Lien personnalisé vers les paramètres
+      LINK_INFO:
+        LABEL: Informations
+        CONTENT: "Textes et couleurs, si un lien pour ouvrir le paramètre doit être défini n'importe où dans le thème, mais que le texte est conservé dans le panneau d'administration. Il est important d'utiliser la classe **tcb-settings-link**, qui ouvre le modal. Le texte et la couleur peuvent être appelés dans Twig via les variables de configuration du plugin. Voir le fichier Lisez-moi pour plus d'informations."
+      LINK_TEXT:
+        LABEL: Texte du lien
+        DEFAULT: Configuration de la bannière de cookies
+      LINK_BACKGROUND_COLOR: Couleur d'arrière-plan du bouton
+      LINK_TEXT_COLOR: Couleur du texte
     COOKIE_MANAGER: "Cookie Manager"
     COOKIE_MANAGER_SUB: "par TecArt GmbH"
     CATEGORIES: Catégories
@@ -40,3 +73,28 @@ fr:
     TEXT_VALIDATE_MESSAGE: Veuillez indiquer une description !
     SCRIPT_CATEGORY_VALIDATE_MESSAGE: Veuillez indiquer une catégorie !
     COOKIE_MANAGER_SCRIPT_ADVISE: Veuillez créer au moins une catégorie que vous pouvez affecter au script.
+es:
+  PLUGIN_TECART_COOKIE_MANGER:
+    DATA_STORAGE: Almacenamiento de datos
+    CUSTOM_SETTINGS:
+      TITLE: Enlace personalizado a la configuración
+      LINK_INFO:
+        LABEL: Información
+        CONTENT: "Textos y colores, si se debe establecer un enlace para abrir la configuración en cualquier parte del tema, pero el texto se mantiene en el panel de administración. Es importante utilizar la clase **tcb-settings-link**, que abre el modal. El texto y el color se pueden recuperar en Twig a través de las variables de configuración del complemento. Consulte el archivo Léame para obtener más información."
+      LINK_TEXT:
+        LABEL: Texto del enlace
+        DEFAULT: Configuración del banner de cookies
+      LINK_BACKGROUND_COLOR: Color de fondo del botón
+      LINK_TEXT_COLOR: Color del texto
+    COOKIE_MANAGER: "Administrador de Cookies"
+    COOKIE_MANAGER_SUB: "por TecArt GmbH"
+    CATEGORIES: Categorías
+    BANNER: Banner
+    SCRIPTS: Scripts
+    SCRIPT_TITLE: Título del Script
+    BANNER_TEXT_DEFAULT: Nos ayudan a comprender mejor cómo se utilizan nuestros sitios web para que podamos ofrecerle contenido personalizado.
+    TITLE_VALIDATE_MESSAGE: ¡Por favor, introduzca un título!
+    CODE_VALIDATE_MESSAGE: ¡Por favor, introduzca el código del script!
+    TEXT_VALIDATE_MESSAGE: ¡Por favor, introduzca una descripción!
+    SCRIPT_CAT_VALIDATE_MESSAGE: ¡Por favor, establezca una categoría!
+    COOKIE_MANAGER_SCRIPT_ADVISE: ¡Por favor, crea mínimo una categoría para asignar al script.
