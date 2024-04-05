@@ -168,7 +168,7 @@ class TecartCookieBanner{
         }
         const expires = this.cookieExpireDate();
         const json_string = JSON.stringify(cookieConsentCategoriesArray);
-        document.cookie = 'cookieconsent_categories=' + json_string + ';' + expires + ';path=/';
+        document.cookie = 'cookieconsent_categories=' + json_string + ';' + expires + ';path=/; SameSite=Lax;';
     }
 
     /**
@@ -180,7 +180,7 @@ class TecartCookieBanner{
         }
         const expires = this.cookieExpireDate();
         const json_string = JSON.stringify(cookieConsentScriptsArray);
-        document.cookie = 'cookieconsent_scripts=' + json_string + ';' + expires + ';path=/';
+        document.cookie = 'cookieconsent_scripts=' + json_string + ';' + expires + ';path=/; SameSite=Lax;';
     }
 
     /**
@@ -192,7 +192,7 @@ class TecartCookieBanner{
         }
         const expires = this.cookieExpireDate();
         const json_string = JSON.stringify(cookieConsentOnScrollScriptsArray);
-        document.cookie = 'cookieconsent_onscroll_scripts=' + json_string + ';' + expires + ';path=/';
+        document.cookie = 'cookieconsent_onscroll_scripts=' + json_string + ';' + expires + ';path=/; SameSite=Lax;';
     }
 
     /**
@@ -611,7 +611,6 @@ class TecartCookieBanner{
         if (this.cookieBannerCategoriesData.categories_save_layout){
             tabSaveSettingsLayout = this.cookieBannerCategoriesData.categories_save_layout;
         }
-
 
         const tabs = '<div id="tcbSettings" class="tcb-catTabs">' +
             tabSection+
