@@ -1,7 +1,7 @@
 # v0.1.14
 ## 04/05/2024
 1. [](#improved)
-   * Add the "SameSite" attribute to "Lax" for the "cookieconsent_categories", "cookieconsent_onscroll_scripts" and "cookieconsent_scripts" cookies to comply with Firefox warnings and ensure consistent behavior.
+   * Add the `SameSite` attribute to `Lax` for the `cookieconsent_categories`, `cookieconsent_onscroll_scripts` and `cookieconsent_scripts` cookies to comply with Firefox warnings and ensure consistent behavior.
    
 # v0.1.13
 ## 04/04/2024
