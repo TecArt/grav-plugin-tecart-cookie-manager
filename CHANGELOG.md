@@ -1,3 +1,8 @@
+# v0.1.15
+## 14/11/2024
+1. [](#improved)
+   * Fixed double quotation marks in description
+
 # v0.1.14
 ## 04/05/2024
 1. [](#improved)

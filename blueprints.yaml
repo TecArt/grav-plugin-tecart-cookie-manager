@@ -1,5 +1,5 @@
 name: TecArt Cookie Manager
-version: 0.1.14
+version: 0.1.15
 description: "TecArt cookie banner manager provides a cookie banner plugin with complete cookie management in admin and extended frontend views. The plugin is created by [TecArt GmbH](https://www.tecart.de) and based on the popular [CookieConsent](https://cookieconsent.osano.com/) JS-library by Osano."
 icon: shield
 author:
